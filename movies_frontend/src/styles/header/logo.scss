@@ -1,0 +1,16 @@
+.logo {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-xlarge;
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .logo {
+        font-size: $font-size-xlarge;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .logo {
+        font-size: $font-size-large;
+    }
+}

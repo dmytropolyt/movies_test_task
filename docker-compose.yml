@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+
+  backend:
+    build:
+      context: ./movies_backend
+      dockerfile: Dockerfile
+    command: >
+      sh -c "python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./movies_backend:/movies_backend
+    env_file:
+      - ./movies_backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./movies_frontend
+      dockerfile: Dockerfile
+    command: npm run dev
+    ports:
+      - '8080:8080'
+    env_file:
+      - ./movies_frontend/.env
+    depends_on:
+      - backend
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=movie
+      - POSTGRES_PASSWORD=my_movies
+      - POSTGRES_DB=movie_db
+
+volumes:
+  postgres_data:

@@ -1,0 +1,30 @@
+@import 'logo', 'account', 'login';
+
+.header-wrapper {
+    top: 0;
+    position: sticky;
+    background-color: $color-brand-lightblack;
+    z-index: 100;
+}
+
+.header {
+    @include fluid-container;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: relative;
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .header {
+        height: 64px;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .header {
+        height: 56px;
+    }
+}

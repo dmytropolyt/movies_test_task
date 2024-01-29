@@ -1,0 +1,6 @@
+.movie-poster {
+    &_image {
+        object-fit: cover;
+        width: 100%;
+    }
+}

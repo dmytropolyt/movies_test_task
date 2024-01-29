@@ -1,0 +1,38 @@
+@import 'commentform';
+
+.discussion {
+    display: grid;
+    gap: $grid-base * 2;
+
+    &_title {
+        font-size: $font-size-xlarge;
+        text-align: center;
+    }
+}
+
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: $grid-base;
+    border-bottom: 2px solid $color-brand-black;
+
+    &_user {
+        font-size: $font-size-middle;
+    }
+
+    &_info {
+        display: flex;
+        flex-direction: column;
+        gap: calc($grid-base / 2);
+    }
+
+    &_date-dedication {
+        display: flex;
+        gap: $grid-base;
+        font-size: $font-size-small;
+    }
+
+    &_text {
+        font-size: $font-size-large;
+    }
+}

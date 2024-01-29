@@ -1,0 +1,42 @@
+html,
+body,
+.root {
+    height: 100%;
+}
+
+body {
+    font: #{$font-size-base} / 1.25 $font-family-base;
+    color: $color-white;
+    background-color: #303030;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.site-input {
+    background-color: $color-white;
+    border: 1px solid $color-brand-black;
+    height: $grid-base * 2 + 4px;
+    box-sizing: border-box;
+    padding: 0 $grid-base;
+}
+
+.site-button {
+    cursor: pointer;
+    height: $grid-base * 2;
+    background-color: $color-brand-black;
+    color: $color-white;
+}
+
+.global-message {
+    @include fluid-container;
+    margin-top: calc($grid-base / 2);
+}
+
+.MuiInputBase-formControl {
+    background-color: $color-white;
+    color: $color-brand-black;
+}

@@ -1,0 +1,18 @@
+@import 'movie';
+
+.movie-page {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .movie-page {
+        row-gap: $grid-base * 2;
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .movie-page {
+        row-gap: $grid-base;
+    }
+}

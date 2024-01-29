@@ -1,0 +1,74 @@
+.movie {
+    display: grid;
+
+    &_title {
+        font-weight: $font-weight-bold;
+    }
+
+    &_info,
+    &_summary {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_summary {
+        row-gap: calc($grid-base / 2);
+
+        &_label {
+            font-weight: $font-weight-bold;
+            margin-right: .5em;
+        }
+    }
+
+    &_discussion {
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: $font-weight-bold;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .movie {
+        font-size: $font-size-middle;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto 4fr;
+        grid-template-areas: 'poster title' 'poster info';
+        gap: $grid-base $grid-base * 2;
+
+        &_title {
+            grid-area: title;
+            font-size: $font-size-xxlarge;
+        }
+        
+        &_info {
+            grid-area: info;
+            row-gap: $grid-base * 2;
+        }
+
+        .movie-poster {
+            grid-area: poster;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .movie {
+        grid-auto-flow: row;
+        row-gap: $grid-base;
+
+        &_title {
+            order: 0;
+            font-size: $font-size-xlarge;
+        }
+
+        &_info {
+            order: 2;
+            row-gap: $grid-base;
+            font-size: $font-size-middle;
+        }
+
+        .movie-poster {
+            order: 1;
+        }
+    }
+}

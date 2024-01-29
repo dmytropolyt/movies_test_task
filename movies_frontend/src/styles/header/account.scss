@@ -1,0 +1,80 @@
+.account {
+    &_dropdown {      
+        position: absolute;
+        background-color: $color-white;
+        top: 100%;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, .25);
+        display: flex;
+        flex-direction: column;
+        row-gap: $grid-base;
+
+        &::before {
+            position: absolute;
+            content: "";
+            width: 14px;
+            height: 10px;
+            right: $grid-base * 2.5;
+            top: -3px;
+            transform: rotate(135deg);
+            background-color: $color-white;
+        }
+
+        &:not(.open) {
+            display: none;
+        }
+    }
+
+    &_button {
+        cursor: pointer;
+        font-size: 26px;
+    }
+
+    &_back-button {
+        color: $color-brand-black;
+        font-size: 20px;
+        margin-top: - calc($grid-base / 2);
+        cursor: pointer;
+    }
+
+    &_menu {
+        display: flex;
+        flex-direction: column;
+        gap: $grid-base;
+
+        &_button {
+            @extend .site-button;
+
+            padding-left: $grid-base;
+            padding-right: $grid-base;
+
+            &.logout {
+                background-color: $color-brand-red;
+            }
+        }
+    }
+}
+
+
+@media (min-width: $breakpoint-desktop) {
+    .account {
+        &_dropdown {
+            right: 0;
+            padding: $grid-base * 1.5 $grid-base * 2;
+        }
+    }
+}
+
+@media (max-width: $breakpoint-mobile) {
+    .account {
+        &_dropdown {
+            left: 0;
+            right: 0;
+            padding: $grid-base;
+
+            &::before {
+                right: $grid-base * 1.5;
+                top: -2px;
+            }
+        }
+    }
+}

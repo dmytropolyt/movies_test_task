@@ -1,0 +1,17 @@
+.comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: $grid-base;
+
+    &_submit {
+        @extend .site-button;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .comment-form {
+        &_submit {
+            width: 20%;
+        }
+    }
+}

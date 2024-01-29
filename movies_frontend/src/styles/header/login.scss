@@ -1,0 +1,31 @@
+.login-form {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    row-gap: $grid-base;
+    color: black;
+
+    .input {
+        @extend .site-input;
+
+        &.error {
+            border-color: $color-brand-red;
+        }
+    }
+
+    .button {
+        @extend .site-button;
+    }
+
+    .error-message {
+        color: $color-brand-red;
+        font-size: $font-size-small;
+    }
+}
+
+@media (min-width: $breakpoint-desktop) {
+    .login-form {
+        width: 240px;
+    }
+}
+

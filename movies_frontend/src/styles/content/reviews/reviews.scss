@@ -1,0 +1,7 @@
+@import 'review';
+@import 'review-form';
+
+.reviews {
+    display: grid;
+    gap: $grid-base * 2;
+}
